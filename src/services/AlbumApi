@@ -1,0 +1,18 @@
+import axios from 'axios'
+const ApiURL = 'https://jsonplaceholder.typicode.com/'
+export default {
+
+  fetchAlbumCollection () {
+    return axios.get(ApiURL + 'albums')
+      .then(response => {
+        return response.data
+      })
+  },
+
+  fetchAlbum (id) {
+    return axios.get(ApiURL + 'photos?albumId=' + id)
+      .then(response => {
+        return response.data
+      })
+  }
+}
